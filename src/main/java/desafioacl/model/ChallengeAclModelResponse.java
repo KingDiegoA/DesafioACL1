@@ -1,5 +1,6 @@
 package desafioacl.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -12,11 +13,14 @@ import java.util.List;
 
 public class ChallengeAclModelResponse {
 
+
     @JsonProperty("id")
     private Long id = null;
 
+
     @JsonProperty("fechaCreacion")
     private LocalDate fechaCreacion = null;
+
 
     @JsonProperty("fechaFin")
     private LocalDate fechaFin = null;
@@ -72,6 +76,8 @@ public class ChallengeAclModelResponse {
     public void getFechasFaltantes(List<LocalDate> fechasFaltantes) {
         this.fechasFaltantes = fechasFaltantes;
     }
+
+
 }
 
 
