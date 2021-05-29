@@ -18,7 +18,6 @@ public class ChallengeAclImplService implements ChallengeAclService {
         return challengeAclModelResponse;
     }
 
-
     public  ChallengeAclModelResponse calcularPeriodosPerdidos(){
         ChallengeAclModelResponse data = this.calcularPeriodosPerdidos();
         ChallengeAclModelResponse challengeAclModelResponse = new ChallengeAclModelResponse();
@@ -37,4 +36,5 @@ public class ChallengeAclImplService implements ChallengeAclService {
 
         return challengeAclModelResponse;
     }
+
 }
