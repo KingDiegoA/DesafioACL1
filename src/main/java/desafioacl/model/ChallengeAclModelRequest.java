@@ -12,7 +12,7 @@ import java.util.List;
 
 
 public class ChallengeAclModelRequest {
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+
     @JsonProperty("id")
     private Long id = null;
 
