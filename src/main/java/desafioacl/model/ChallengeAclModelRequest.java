@@ -12,16 +12,19 @@ import java.util.List;
 
 
 public class ChallengeAclModelRequest {
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+
     @JsonProperty("id")
     private Long id = null;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonProperty("fechaCreacion")
     private LocalDate fechaCreacion = null;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonProperty("fechaFin")
     private LocalDate fechaFin = null;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonProperty("fechas")
     private List<LocalDate> fechas = null;
 

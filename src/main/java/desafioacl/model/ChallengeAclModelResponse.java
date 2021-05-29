@@ -13,21 +13,22 @@ import java.util.List;
 
 public class ChallengeAclModelResponse {
 
-
     @JsonProperty("id")
     private Long id = null;
 
-
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonProperty("fechaCreacion")
     private LocalDate fechaCreacion = null;
 
-
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonProperty("fechaFin")
     private LocalDate fechaFin = null;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonProperty("fechas")
     private List<LocalDate> fechas = null;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @JsonProperty("fechasFaltantes")
     private List<LocalDate> fechasFaltantes = null;
 
@@ -73,11 +74,26 @@ public class ChallengeAclModelResponse {
         return fechasFaltantes;
     }
 
-    public void getFechasFaltantes(List<LocalDate> fechasFaltantes) {
+    public void setFechasFaltantes(List<LocalDate> fechasFaltantes) {
         this.fechasFaltantes = fechasFaltantes;
     }
 
-
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("PeriodoGenerado [id=");
+        builder.append(id);
+        builder.append(", fechaCreacion=");
+        builder.append(fechaCreacion);
+        builder.append(", fechaFin=");
+        builder.append(fechaFin);
+        builder.append(", fechas=");
+        builder.append(fechas);
+        builder.append("]");
+        builder.append(fechasFaltantes);
+        builder.append("]");
+        return builder.toString();
+    }
 }
 
 
