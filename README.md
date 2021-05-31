@@ -43,4 +43,4 @@ Luego de compilar el proyecto ingresar al directorio target ejecutar el siguient
 
 La documentación swagger queda disponible en
 
-    http://127.0.0.1:8090/swagger-ui.html#/
+    http://127.0.0.1:8081/swagger-ui.html#/

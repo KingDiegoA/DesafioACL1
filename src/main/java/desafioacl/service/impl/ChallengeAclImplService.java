@@ -14,7 +14,7 @@ public class ChallengeAclImplService implements ChallengeAclService {
 
     @Override
     public ChallengeAclModelResponse findDates(ChallengeAclModelRequest input) {
-        var challengeAclModelResponse  = new ChallengeAclModelResponse();
+        const challengeAclModelResponse  = new ChallengeAclModelResponse();
         return challengeAclModelResponse;
     }
 
@@ -35,6 +35,27 @@ public class ChallengeAclImplService implements ChallengeAclService {
         challengeAclModelResponse.setFechasFaltantes(fechasFaltantes);
 
         return challengeAclModelResponse;
+    }
+
+    private void escribirJSON(ChallengeAclModelRequest entrada, ChallengeAclModelResponse salida) {
+        try {
+            Path file = Paths.get("JsonResponse").toAbsolutePath().normalize();
+            Files.createDirectories(file);
+
+            // entrada
+            Path targetEntrada = file.resolve("entrada.json");
+            FileOutputStream streamEntrada = new FileOutputStream(targetEntrada.toString());
+            streamEntrada.write(gson.toJson(entrada).getBytes());
+            streamEntrada.close();
+
+            // salida
+            Path targetSalida = file.resolve("salida.json");
+            FileOutputStream streamSalida = new FileOutputStream(targetSalida.toString());
+            streamSalida.write(gson.toJson(salida).getBytes());
+            streamSalida.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }
